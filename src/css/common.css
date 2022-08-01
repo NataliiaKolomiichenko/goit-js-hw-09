@@ -16,3 +16,18 @@ img {
   display: block;
   max-width: 100%;
 }
+
+/* ==== For timer === */
+.timer {
+  display: flex;
+}
+
+.field:not(:last-child) {
+  margin-right: 10px;
+}
+
+.field > span {
+  display: block;
+  text-align: center;
+}
+
