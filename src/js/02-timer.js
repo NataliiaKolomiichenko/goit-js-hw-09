@@ -22,7 +22,7 @@ const options = {
   minuteIncrement: 1,
   onClose(selectedDates) {
       choosingDate = selectedDates[0];
-      if (choosingDate < this.defaultDate) {
+      if (choosingDate < options.defaultDate) {
         return Notify.failure("Please choose a date in the future")
     } else {
             refs.startBtnEl.disabled = false;            
@@ -47,7 +47,11 @@ const timer = {
             },
                 }
             
-refs.startBtnEl.addEventListener('click', () => timer.start())
+refs.startBtnEl.addEventListener('click', () => {
+    timer.start();
+    refs.dateInputEl.disabled = true;
+    refs.startBtnEl.disabled = true;
+})
 
 flatpickr(refs.dateInputEl, options);
 
